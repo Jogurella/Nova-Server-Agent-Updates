@@ -2,13 +2,13 @@
 
 Öffentliche Windows-Updatepakete, Setups und Prüfsummen für Nova Server Agent.
 
-**Stabile Version: 0.7.19.** Der automatische Connectorwechsel und die native Liveabnahme dieser Ausgabe sind abgeschlossen. Die laufende Minecraft-Instanz blieb erhalten. Die Zwischenversionen 0.7.16–0.7.18 bleiben historische Prüfversionen.
+**Windows-Client: 0.7.20 · Connector: 0.7.19.** Die Fensterkorrektur ist ein eigenständiges Clientupdate; der Connector bleibt bei der bereits live abgenommenen Version 0.7.19. Die Zwischenversionen 0.7.16–0.7.18 bleiben historische Prüfversionen.
 
 ## Windows-Client aktualisieren
 
 1. **Reparaturen & Updates → Windows-Client aktualisieren → Quelle & Kanal** öffnen. Bei älteren Clients heißt der Bereich **Nova Server Agent aktualisieren → Windows-Client**.
 2. Repository `Jogurella/Nova-Server-Agent-Updates`, Kanal **Stabil** und die regelmäßige Prüfung aktivieren, Quelle bestätigen und speichern.
-3. **Jetzt prüfen** wählen und das Update auf **0.7.19** bestätigen.
+3. **Jetzt prüfen** wählen und das Update auf **0.7.20** bestätigen.
 
 Der Client zeigt ausschließlich Client-Softwareupdates. Standardmäßig erscheint die neueste passende, noch nicht installierte Version. Ältere Versionen sind über **Alle Versionen** erreichbar; bereits installierte oder ältere Pakete werden nicht als neues Installationsangebot dargestellt. Paketlisten sind scrollbar begrenzt, Verläufe standardmäßig eingeklappt und neueste Einträge zuerst sortiert. Auch im gemeinsamen Serverpakete-Eingang erscheinen keine Connector-Softwarepakete.
 
@@ -21,6 +21,14 @@ Die Connectorquelle wird separat am Server-PC unter **Connectorupdates** eingeri
 Die geschützte Softwarepipeline sichert die Programmdateien, prüft das Paket und übergibt laufende Spielprozesse geordnet. Der Connector-Dienst wechselt kurz; das Programmupdate beauftragt keinen Minecraft-Stopp oder -Neustart. Laufende Wartungsaufträge und Not-Aus bleiben Sperren. Die tatsächlich durchgeführte automatische Aktualisierung wurde mit offener authentifizierter Liveverbindung und unveränderter Minecraft-Instanz geprüft.
 
 Beim ersten Wechsel aus einem alten Connector die **Nova-Clients über das Infobereich-Menü → Beenden** und dessen alte **Statusanzeige → Statusanzeige beenden** vorübergehend schließen. **Minecraft bleibt geöffnet.** Ist der eigene Connector-Dienst nach einem älteren Fehlversuch bereits gestoppt, benötigt ausschließlich dessen Wiederstart gegebenenfalls Windows-Administratorrechte. Dafür keinen Minecraft-Starttask ausführen.
+
+## Windows-Client 0.7.20
+
+- Der Fensterinhalt passt zur nativen Außenkante: keine zweite eingerückte Rundung und kein dunkler Doppelrand.
+- Maximiert schließt die Oberfläche bündig ab; die Taskleiste bleibt berücksichtigt.
+- Wiederherstellen und Größenänderung über die Fensterecken bleiben bedienbar. Die Startanimation hinterlässt keine ausgeschnittenen Ecken.
+
+Geprüft: 92 veröffentlichte Client-/UI-Prüfungen, 37 native Client-Installerprüfungen und sämtliche 697 Nutzdateien mit dem ursprünglichen Updateleser 0.7.12. Dieses Release enthält ausschließlich Clientpaket, Client-Setup und Prüfsummen. Der Connectorupdater überspringt es und verwendet weiterhin das separate Connectorrelease 0.7.19.
 
 ## Version 0.7.19
 
@@ -41,7 +49,7 @@ Beide öffentlichen ZIP-Downloads wurden mit dem ursprünglichen 0.7.12-Updater 
 - `ServerAgent-client-win-x64.zip`: Paket für den eingebauten Clientupdater.
 - `ServerAgent-connector-win-x64.zip`: Paket für den eingebauten Connectorupdater.
 - `SHA256SUMS`: SHA-256 der veröffentlichten Pakete und Setups; die ZIP-Manifeste enthalten zusätzlich SHA-256 je Datei.
-- `Nova-Server-Agent-Client-Setup-0.7.19-2026-10-31.exe`: vollständiges Client-Setup.
+- `Nova-Server-Agent-Client-Setup-0.7.20-2026-11-01.exe`: vollständiges Client-Setup.
 - `Nova-Server-Agent-Connector-Setup-0.7.19-2026-10-31.exe`: vollständiges Connector-Setup.
 
-[Version 0.7.19](https://github.com/Jogurella/Nova-Server-Agent-Updates/releases/tag/v0.7.19) · [Stabiler Kanal](https://github.com/Jogurella/Nova-Server-Agent-Updates/releases/latest)
+[Client 0.7.20](https://github.com/Jogurella/Nova-Server-Agent-Updates/releases/tag/v0.7.20) · [Connector 0.7.19](https://github.com/Jogurella/Nova-Server-Agent-Updates/releases/tag/v0.7.19)
