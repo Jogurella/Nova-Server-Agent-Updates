@@ -1,30 +1,39 @@
 # Nova Server Agent – Updates
 
-Öffentliche Updatepakete und Prüfsummen für Nova Server Agent.
+Öffentliche Windows-Updatepakete, Setups und Prüfsummen für Nova Server Agent.
 
-## Client und Connector online aktualisieren
+## Windows-Client aktualisieren
 
-1. Im Client **Reparaturen & Updates → Nova Server Agent aktualisieren** öffnen.
-2. Bei der gewünschten Komponente **Quelle & Kanal** wählen und `Jogurella/Nova-Server-Agent-Updates` eintragen. Client und Connector haben getrennte Einstellungen.
-3. Kanal **Stabil**, **Beim Start und alle 6 Stunden prüfen** aktivieren, Quelle bestätigen und speichern.
-4. **Jetzt prüfen** bzw. ab 0.7.15 **Update prüfen** bei der jeweiligen Komponente wählen und das Update bestätigen.
+1. **Reparaturen & Updates → Windows-Client aktualisieren → Quelle & Kanal** öffnen. Bei älteren Clients heißt der Bereich **Nova Server Agent aktualisieren → Windows-Client**.
+2. Repository `Jogurella/Nova-Server-Agent-Updates`, Kanal **Stabil** und die regelmäßige Prüfung aktivieren, Quelle bestätigen und speichern.
+3. **Jetzt prüfen** wählen und das angebotene Clientupdate bestätigen.
 
-Die Einstellung **Neue Versionen automatisch installieren** ist optional. Kopplungen und persönliche Einstellungen bleiben beim Update erhalten.
+Ab 0.7.16 zeigt der Client ausschließlich Clientupdates. Standardmäßig erscheint die neueste Paketversion. Weitere Versionen und der begrenzte Updateverlauf lassen sich aufklappen beziehungsweise filtern. Falls ein alter Client weiterhin kein Update findet, kann das vollständige Client-Setup aus dem Release die vorhandene Installation aktualisieren. Kopplungen und Einstellungen bleiben erhalten.
 
-## Version 0.7.15
+## Connector aktualisieren
 
-- Maximierte Client- und Connector-Fenster respektieren die Monitor-Arbeitsfläche und die Taskleiste.
-- Client- und Connector-Updateprüfungen arbeiten unabhängig; Fehler eines Connectors verdecken kein Clientupdate.
-- Eigene Prüfschaltflächen, sichtbarer Aktivierungsstatus und sofortige Prüfung nach dem Speichern der Quelle.
-- Die Flackerkorrekturen aus 0.7.14 bleiben enthalten: bestehende Anzeigen, Scrollpositionen, Eingaben und Details bleiben bei Statusabfragen erhalten.
+Die Connectorquelle wird separat am Server-PC eingerichtet. Ab 0.7.16 besitzt die Connector-Statusanzeige den Bereich **Connectorupdates**. Dort dasselbe Repository und **Stabil** wählen und **Automatisch aktualisieren** bewusst aktivieren. Dadurch wird keine KI-Autonomie eingeschaltet und es werden keine zusätzlichen KI-Rechte vergeben.
 
-Der Connector wird über seine geschützte Softwarepipeline mit Sicherung und Rückfall aktualisiert. Der Windows-Dienst wechselt dabei kurz. Ein Minecraft-Neustart ist für dieses Programmupdate nicht vorgesehen; Wartungs- und Spielerprüfungen bleiben wirksam.
+Für ein erstes Update von Connector 0.7.12 dessen alte **Statusanzeige** über das Nova-Symbol im Infobereich → **Statusanzeige beenden** schließen. Der Dienst und Minecraft sollen dabei weiterlaufen. Das Update kann über die bisherige Connector-Updatefunktion eines älteren Clients oder über das vollständige Connector-Setup erfolgen. Die neue Statusanzeige hat anschließend ihre eigene Updatebedienung.
+
+Die geschützte Softwarepipeline sichert die Programmdateien, prüft das Paket und verwendet die Brokerübergabe. Der Connector-Dienst wechselt kurz; ein Minecraft-Stopp oder -Neustart wird für das Programmupdate nicht beauftragt. Laufende Wartungsaufträge und Not-Aus bleiben Sperren. Eine aktivierte Automatik kann zukünftige neue Connectorversionen selbst installieren.
+
+## Version 0.7.16
+
+- Begrenzte, scrollbar dargestellte Update- und Suchlisten mit Versions-, Namens-, Ordner- und Statusfiltern.
+- Bestehende Anzeigen, Fokus, Eingaben, Details und Scrollpositionen bleiben beim Aktualisieren erhalten.
+- Beobachtete Server zeigen die geprüfte tatsächliche Instanz und Umgebung. Abgelaufene Zuordnungen erscheinen ausdrücklich ungeprüft.
+- Neue Minecraft-Chatzeilen werden ereignisgesteuert über die authentifizierte Verbindung übertragen; der Client hält höchstens 300 Zeilen und ergänzt den Stand nach einer Wiederverbindung.
+- Die Taskleisten- und Maximierungskorrekturen aus 0.7.15 sind enthalten.
+
+Passive Beobachtung ist keine vollständige Prozesssteuerung. Spielerchat bleibt unbestätigter Text ohne Befehlswirkung. Das Programmupdate aktiviert weder eine externe Serversteuerung noch eine Chatvorstellung.
 
 ## Dateien
 
-- `ServerAgent-client-win-x64.zip`: Clientpaket mit `update.json` und SHA-256 je Datei.
-- `ServerAgent-connector-win-x64.zip`: Connectorpaket mit `update.json` und SHA-256 je Datei.
-- `SHA256SUMS`: SHA-256 der veröffentlichten Pakete.
-- `Nova-Server-Agent-Client-Setup-0.7.15-2026-10-31.exe`: vollständiger Clientinstaller; kann auch eine ältere Installation bei Problemen mit deren Updateprüfung aktualisieren.
+- `ServerAgent-client-win-x64.zip`: Paket für den eingebauten Clientupdater.
+- `ServerAgent-connector-win-x64.zip`: Paket für den eingebauten Connectorupdater.
+- `SHA256SUMS`: SHA-256 der veröffentlichten Pakete und Setups; die ZIP-Manifeste enthalten zusätzlich SHA-256 je Datei.
+- `Nova-Server-Agent-Client-Setup-0.7.16-2026-10-31.exe`: vollständiges Client-Setup.
+- `Nova-Server-Agent-Connector-Setup-0.7.16-2026-10-31.exe`: vollständiges Connector-Setup für Einrichtung beziehungsweise Aktualisierung.
 
 [Aktuelles Release und Downloads](https://github.com/Jogurella/Nova-Server-Agent-Updates/releases/latest)
